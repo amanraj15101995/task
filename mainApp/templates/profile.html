@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+            </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="/logout/">Logout</a>
+        </nav>
+        
+        <!-- <p>{{i.username}}</p>
+        <p>{{i.Email}}</p>
+        <p>{{i.address}}</p> -->
+       
+        <table style="width:100%">
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>
+            </tr>
+            {% for i in Account %}
+            <tr>
+                
+              <td>{{i.username}}</td>
+              <td>{{i.Email}}</td>
+              <td>{{i.address}}</td>
+            
+              <!-- <td><button onclick="window.location.href='update/<int:pk>/'">Update</button></td>
+              <td><button onclick="window.location.href='delete/<int:pk>/ '">Delete</button></td> -->
+              <td><a href="/update/{{i.id}}">Update</a></td> 
+              <td><a href="/delete/{{i.id}}">Delete</a></td>
+           
+            </tr>
+            {% endfor %}
+          </table>
+          
+
+        
+
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+      <title>Signup</title>
+    </head>
+    <body>
+        <div class="fadeIn first">
+            <h5>Signup </h5>
+          </div>
+           {% for msg in messages %}
+              {{msg}}
+            {% endfor %}
+          <!-- Login Form -->
+          <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+            <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email">
+            <input type="text" id="password" class="fadeIn third" name="pwd" placeholder="password">
+            <input type="text" id="cpassword" class="fadeIn third" name="cpwd" placeholder="Comfirm password">
+            <input type="text" id="address" class="fadeIn third" name="address" placeholder="address">
+            <input type="submit" class="fadeIn fourth" value="Signup">
+          </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" href="/">Login</a>
+          
+          </div>  
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/update/{{user.id}}" method="POST">
+            {% csrf_token %}
+        <table style="width:100%">
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>
+            </tr>
+            
+            <tr>
+                
+              <td><input type="text" name="username" id="username" required maxlength="20" value="{{ user.username }}"/>  </td>
+              <td><input type="text" name="Email" id="Email" required maxlength="20" value="{{ user.Email }}"/>  </td>
+              <td><input type="text" name="address" id="address" required maxlength="20" value="{{ user.address }}"/>  </td>
+              <td><button type="submit">Update</button></td>
+              <!-- <td><a href="">Update</a></td> -->
+            </tr>
+           
+          </table>
+        </form>
+    </body>
+</html>
